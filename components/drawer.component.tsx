@@ -1,4 +1,5 @@
 import React from 'react';
+import { BiX } from 'react-icons/bi';
 
 type Props = {
   children: React.ReactNode;
@@ -13,16 +14,24 @@ const DrawerWrapper = (props: Props) => {
       <div className="drawer-content flex flex-col">{props.children}</div>
       <div className="drawer-side">
         <label htmlFor={`${DRAWER_ID}`} className="drawer-overlay"></label>
-        <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
-          <li>
-            <a>Porfolio</a>
-          </li>
-          <li>
-            <a>Stories</a>
-          </li>
-          <li>
-            <a>About me</a>
-          </li>
+        <ul className="menu overflow-y-auto w-80 bg-base-100">
+          <div className="flex px-4 pt-4 justify-between items-center">
+            <h2 className="text-2xl font-bold">RTVCL</h2>
+            <DrawerOpen>
+              <BiX className="text-3xl" />
+            </DrawerOpen>
+          </div>
+          <ul className="menu bg-base-100 w-full">
+            <li>
+              <a className="">Item 1</a>
+            </li>
+            <li>
+              <a className="">Item 2</a>
+            </li>
+            <li>
+              <a className="">Item 3</a>
+            </li>
+          </ul>
         </ul>
       </div>
     </div>
