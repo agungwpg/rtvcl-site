@@ -10,10 +10,30 @@ type Props = {};
 const HomeScreen = (props: Props) => {
   return (
     <>
-      <TopMenu />
-      <HeroSection />
-      <BusinessExperience />
-      <Stories />
+      <div className="drawer  drawer-end">
+        <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+        <div className="drawer-content flex flex-col">
+          <TopMenu />
+          <HeroSection />
+          <BusinessExperience />
+          <Stories />
+        </div>
+        <div className="drawer-side">
+          <label htmlFor="my-drawer" className="drawer-overlay"></label>
+          <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
+            {/* <!-- Sidebar content here --> */}
+            <li>
+              <a>Porfolio</a>
+            </li>
+            <li>
+              <a>Stories</a>
+            </li>
+            <li>
+              <a>About me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </>
   );
 };
