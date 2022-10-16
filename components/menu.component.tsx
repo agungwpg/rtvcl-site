@@ -1,5 +1,6 @@
 import React from 'react';
 import { BiMapPin, BiMenu } from 'react-icons/bi';
+import { DrawerOpen } from './drawer.component';
 
 type Props = {};
 
@@ -12,10 +13,9 @@ const TopMenu = (props: Props) => {
           <BiMapPin className="mr-2" /> Yogyakarta, ID
         </p>
       </div>
-
-      <label htmlFor="my-drawer" className="btn btn-square btn-ghost">
+      <DrawerOpen>
         <BiMenu className="text-4xl" />
-      </label>
+      </DrawerOpen>
     </div>
   );
 };
