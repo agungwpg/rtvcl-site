@@ -7,7 +7,7 @@ import { NotionPageType } from '../utils/types';
 type Props = {
   about_me_page: NotionPageType;
 };
-const Home = ({ about_me_page }: Props) => {
+const AboutMePage = ({ about_me_page }: Props) => {
   return (
     <>
       <AboutScreen block={about_me_page} />
@@ -25,4 +25,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Home;
+export default AboutMePage;

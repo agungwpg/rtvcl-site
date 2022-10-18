@@ -27,14 +27,13 @@ const DrawerWrapper = (props: Props) => {
           </div>
           <ul className="menu flex-1 font-semibold bg-base-100 w-full">
             <li>
-              <Link href="/stories" as="li">
-                Stories
-              </Link>
+              <Link href="/stories">Stories</Link>
             </li>
             <li>
-              <Link href="/about" as="li">
-                About me
-              </Link>
+              <Link href="/about">About me</Link>
+            </li>
+            <li>
+              <Link href="/roadmap">Roadmap</Link>
             </li>
           </ul>
           <DrawerFooter />
