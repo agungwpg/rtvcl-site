@@ -4,21 +4,25 @@ import BusinessExperience from '../businessExperiences.component';
 import DrawerWrapper from '../drawer.component';
 import HeroSection from '../heroSection.component';
 import TopMenu from '../menu.component';
-import Stories, { StoryList } from '../stories.component';
+import Stories, { StoryList, StoryListItem } from '../stories.component';
 
-type Props = { stories: StoryList[] };
+type Props = {
+  stories: StoryList[];
+};
 
-const HomeScreen = (props: Props) => {
+const StoriesScreen = (props: Props) => {
   return (
     <>
       <DrawerWrapper>
         <TopMenu />
-        <HeroSection />
-        <BusinessExperience />
-        <Stories stories={props.stories} />
+        <div className="px-4">
+          {props.stories.map((story) => {
+            return <StoryListItem StoryData={story} key={story.title} />;
+          })}
+        </div>
       </DrawerWrapper>
     </>
   );
 };
 
-export default HomeScreen;
+export default StoriesScreen;
