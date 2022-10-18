@@ -13,7 +13,9 @@ const DrawerWrapper = (props: Props) => {
   return (
     <div className="drawer  drawer-end">
       <input id={`${DRAWER_ID}`} type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col">{props.children}</div>
+      <div className="drawer-content flex flex-col h-full overflow-x-hidden">
+        {props.children}
+      </div>
       <div className="drawer-side">
         <label htmlFor={`${DRAWER_ID}`} className="drawer-overlay"></label>
         <div className="menu overflow-y-auto w-80 bg-base-100 flex flex-col justify-between ">

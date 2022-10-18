@@ -5,7 +5,7 @@ type Props = {};
 
 const HeroSection = (props: Props) => {
   return (
-    <div className="flex p-5 gap-5 items-center relative before:content-[''] before:absolute before:top-0 before:bottom-0 before:right-0 before:left-0 before:bg-black before:-z-10 before:rounded-l-3xl before:translate-x-1/4 overflow-x-hidden">
+    <div className="flex p-5 gap-5 items-center  relative before:content-[''] before:absolute before:top-0 before:bottom-0 before:right-0 before:left-0 before:bg-black before:-z-10 before:rounded-l-3xl before:translate-x-1/4 ">
       <div className="w-3/5  relative h-full flex flex-col justify-center">
         <Image
           src="/img-1.png"
