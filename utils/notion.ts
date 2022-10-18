@@ -18,6 +18,8 @@ export interface NotionDatabaseResponse {
 
 const DATABASE_ID = '612c16a7b9114a1c82f183606df47b9a';
 
+export const ABOUT_ME_ID = 'c0df81f064234654be4c83fa45b83ca4';
+
 const notion_call = `https://notion-api.splitbee.io/v1/table/${DATABASE_ID}`;
 
 export const getStoryList = async () => {

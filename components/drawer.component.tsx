@@ -32,7 +32,7 @@ const DrawerWrapper = (props: Props) => {
               </Link>
             </li>
             <li>
-              <Link href="#" as="li">
+              <Link href="/about" as="li">
                 About me
               </Link>
             </li>
