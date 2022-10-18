@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { BiX } from 'react-icons/bi';
+import DrawerFooter from './drawerFooter.component';
 
 type Props = {
   children: React.ReactNode;
@@ -15,7 +16,7 @@ const DrawerWrapper = (props: Props) => {
       <div className="drawer-content flex flex-col">{props.children}</div>
       <div className="drawer-side">
         <label htmlFor={`${DRAWER_ID}`} className="drawer-overlay"></label>
-        <ul className="menu overflow-y-auto w-80 bg-base-100">
+        <div className="menu overflow-y-auto w-80 bg-base-100 flex flex-col justify-between ">
           <div className="flex px-4 pt-4 justify-between items-center">
             <Link href="/">
               <h2 className="text-2xl font-bold cursor-pointer">RTVCL</h2>
@@ -24,7 +25,7 @@ const DrawerWrapper = (props: Props) => {
               <BiX className="text-3xl" />
             </DrawerOpen>
           </div>
-          <ul className="menu bg-base-100 w-full">
+          <ul className="menu flex-1 font-semibold bg-base-100 w-full">
             <li>
               <Link href="/stories" as="li">
                 Stories
@@ -32,16 +33,12 @@ const DrawerWrapper = (props: Props) => {
             </li>
             <li>
               <Link href="#" as="li">
-                Item 2
-              </Link>
-            </li>
-            <li>
-              <Link href="#" as="li">
-                Item 3
+                About me
               </Link>
             </li>
           </ul>
-        </ul>
+          <DrawerFooter />
+        </div>
       </div>
     </div>
   );
