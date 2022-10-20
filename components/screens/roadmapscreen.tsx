@@ -1,7 +1,7 @@
 import React from 'react';
 import { NotionRenderer } from 'react-notion';
 import DrawerWrapper from '../drawer.component';
-import TopMenu from '../menu.component';
+import TopMenu from '../top_menu.component';
 import 'react-notion/src/styles.css';
 import 'prismjs/themes/prism-tomorrow.css';
 

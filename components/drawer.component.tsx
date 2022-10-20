@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { BiX } from 'react-icons/bi';
 import DrawerFooter from './drawerFooter.component';
+import { useAppContext } from '../context/application';
 
 type Props = {
   children: React.ReactNode;
@@ -22,10 +23,29 @@ const NavigationList: NavigationItem[] = [
 const DRAWER_ID = 'my-drawer';
 
 const DrawerWrapper = (props: Props) => {
+  const { setIsScroll, isScroll } = useAppContext();
+  const scrollArea = useRef<HTMLDivElement>(null);
+  const handleScroll = (e: Event) => {
+    if (scrollArea && scrollArea.current) {
+      scrollArea.current.scrollTop > 0 ? setIsScroll(true) : setIsScroll(false);
+    }
+  };
+  useEffect(() => {
+    if (scrollArea && scrollArea.current) {
+      scrollArea.current.addEventListener('scroll', handleScroll);
+      return () => {
+        scrollArea.current?.removeEventListener('scroll', handleScroll);
+      };
+    }
+  }, []);
+
   return (
     <div className="drawer  drawer-end">
       <input id={`${DRAWER_ID}`} type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col h-full overflow-x-hidden">
+      <div
+        ref={scrollArea}
+        className="drawer-content flex flex-col h-full overflow-x-hidden"
+      >
         {props.children}
       </div>
       <div className="drawer-side">

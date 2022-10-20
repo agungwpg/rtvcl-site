@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 type Props = {};
@@ -23,9 +24,11 @@ const HeroSection = (props: Props) => {
           between Business, Tech, and Design to face and solve user&apos;s
           problems as a Product Manager.
         </p>
-        <button className="bg-white text-black rounded-md mt-3 hover:bg-gray-200">
-          Read me!
-        </button>
+        <Link href={'/about'}>
+          <button className="bg-white text-black rounded-md mt-3 hover:bg-gray-200">
+            Read me!
+          </button>
+        </Link>
       </div>
     </div>
   );

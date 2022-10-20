@@ -3,7 +3,7 @@ import { BiMapPin, BiMenu } from 'react-icons/bi';
 import BusinessExperience from '../businessExperiences.component';
 import DrawerWrapper from '../drawer.component';
 import HeroSection from '../heroSection.component';
-import TopMenu from '../menu.component';
+import TopMenu from '../top_menu.component';
 import Stories, { StoryList, StoryListItem } from '../stories.component';
 
 type Props = {
