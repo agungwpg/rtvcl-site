@@ -7,6 +7,18 @@ type Props = {
   children: React.ReactNode;
 };
 
+type NavigationItem = {
+  href: string;
+  label: string;
+};
+
+const NavigationList: NavigationItem[] = [
+  { href: '/', label: 'Home' },
+  { href: '/stories', label: 'Stories' },
+  { href: '/about', label: 'About me' },
+  { href: '/roadmap', label: 'Roadmap' },
+];
+
 const DRAWER_ID = 'my-drawer';
 
 const DrawerWrapper = (props: Props) => {
@@ -28,15 +40,11 @@ const DrawerWrapper = (props: Props) => {
             </DrawerOpen>
           </div>
           <ul className="menu flex-1 font-semibold bg-base-100 w-full">
-            <li>
-              <Link href="/stories">Stories</Link>
-            </li>
-            <li>
-              <Link href="/about">About me</Link>
-            </li>
-            <li>
-              <Link href="/roadmap">Roadmap</Link>
-            </li>
+            {NavigationList.map((navItem) => (
+              <li key={navItem.label}>
+                <Link href={navItem.href}>{navItem.label}</Link>
+              </li>
+            ))}
           </ul>
           <DrawerFooter />
         </div>
